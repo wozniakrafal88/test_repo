@@ -2,6 +2,10 @@ name: Deploy_artifact_Workflow
 
 on:
   workflow_call:
+   inputs:
+      version:
+        type: string
+        required: true
 
 jobs:
   deploy:
