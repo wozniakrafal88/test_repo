@@ -30,7 +30,7 @@ jobs:
           echo "test_run: ${{  inputs.test_run  }}"
           echo "deploy_artefact: ${{  inputs.deploy_artefact  }}"
   test_run:
-    if: ${{  inputs.test_run  }} ==true
+    if: (${{  inputs.test_run  }} == true)
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
