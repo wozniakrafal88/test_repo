@@ -38,4 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: pararel test version ${{  matrix.versions  }}
-        run: echo "Ping"
+        env: 
+          VERSION: ${{  matrix.versions  }}
+        run: echo "Ping from version $VERSION"
