@@ -56,3 +56,6 @@ jobs:
     if: ${{  inputs.deploy_artefact == true  }}
     needs: test_run
     uses: ./.github/workflows/deploy_artifact.yml
+    with: 
+      version: ${{  inputs.version  }}
+      
