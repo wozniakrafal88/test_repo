@@ -36,9 +36,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: echo "Test running..."
-      
-      
-      
+       
   paralel_test:
     needs: build
     runs-on: ubuntu-latest
@@ -54,3 +52,6 @@ jobs:
           sleep 15s
           echo "Ping from version $VERSION"
 
+  call_deploy_artifact:
+    if: ${{  inputs.deploy_artefact == true  }}
+    uses: ./.github/workflows/deploy_artifact.yml
