@@ -31,6 +31,7 @@ jobs:
           echo "deploy_artefact: ${{  inputs.deploy_artefact  }}"
   test_run:
     if: ${{  inputs.test_run == true  }}
+    needs: paralel_test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -39,6 +40,7 @@ jobs:
       
       
   paralel_test:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
