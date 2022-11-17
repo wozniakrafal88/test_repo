@@ -49,6 +49,6 @@ jobs:
         env: 
           VERSION: ${{  matrix.versions  }}
         run: |
-          wait 15
+          sleep 15s
           echo "Ping from version $VERSION"
 
