@@ -58,6 +58,17 @@ jobs:
           sleep 15s
           echo "Ping from version $VERSION"
 
+  download_artifact:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build_artifact
+      - name: Print artifact
+        run: cat artifact.txt
+
   call_deploy_artifact:
     if: ${{  inputs.deploy_artefact == true  }}
     needs: test_run
