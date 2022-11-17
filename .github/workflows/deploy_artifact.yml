@@ -15,4 +15,4 @@ jobs:
 
       - name: Echo inputs
         run:  |
-          echo "Deploy artifact running..."
+          echo "Deploy artifact for version ${{  inputs.version  }} running..."
