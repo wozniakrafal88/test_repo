@@ -28,7 +28,7 @@ jobs:
           echo "version: ${{  inputs.version  }}"
           echo "test_run: ${{  inputs.test_run  }}"
           echo "deploy_artefact: ${{  inputs.deploy_artefact  }}"
-          echo "This is artifact" > artifact.txt
+          echo "Hello from artifact" > artifact.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
