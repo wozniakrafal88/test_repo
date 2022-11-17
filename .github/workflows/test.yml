@@ -48,4 +48,7 @@ jobs:
       - name: pararel test version ${{  matrix.versions  }}
         env: 
           VERSION: ${{  matrix.versions  }}
-        run: echo "Ping from version $VERSION"
+        run: |
+          wait 15
+          echo "Ping from version $VERSION"
+
