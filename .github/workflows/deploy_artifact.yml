@@ -16,3 +16,12 @@ jobs:
       - name: Echo inputs
         run:  |
           echo "Deploy artifact for version ${{  inputs.version  }} running..."
+  download_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build_artifact
+      - name: Print artifact
+        run: cat artifact.txt
