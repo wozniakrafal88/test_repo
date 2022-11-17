@@ -23,12 +23,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Echo inputs
         run:  |
           echo "version: ${{  inputs.version  }}"
           echo "test_run: ${{  inputs.test_run  }}"
           echo "deploy_artefact: ${{  inputs.deploy_artefact  }}"
+          echo "This is artifact" > artifact.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_artifact
+          path: artifact.txt
+          
   test_run:
     if: ${{  inputs.test_run == true  }}
     needs: paralel_test
