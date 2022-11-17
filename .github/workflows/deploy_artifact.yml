@@ -1,0 +1,14 @@
+name: Deploy_artifact_Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Echo inputs
+        run:  |
+          echo "Deploy artifact running..."
