@@ -29,7 +29,15 @@ jobs:
           echo "version: ${{  inputs.version  }}"
           echo "test_run: ${{  inputs.test_run  }}"
           echo "deploy_artefact: ${{  inputs.deploy_artefact  }}"
-          
+  test_run:
+    if: ${{  inputs.test_run  }} ==true
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: echo "Test running..."
+      
+      
+      
   paralel_test:
     runs-on: ubuntu-latest
     strategy:
