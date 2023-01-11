@@ -1,0 +1,16 @@
+name: push_test.yml
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - './test.txt'
+      
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo
+      shell: bash
+      run: echo "changes!"
